@@ -1,4 +1,4 @@
-[
+var jsonData = [
     {
         "title" : "Борщ",
         "image" : "./content/borsch.jpg",
@@ -71,7 +71,7 @@
     },
     {
         "title" : "Штрудель с яблоками и изюмом",
-        "image" : "./content/strudelsvishnei.jpg",
+        "image" : "./content/strudelsiablokom.jpg",
         "price" : 48800
     }
-]
+];
