@@ -9,7 +9,6 @@ var LunchComplex = function(){
                 title: jsonData[i].title,
                 price: ko.observable(jsonData[i].price),
                 image: jsonData[i].image,
-                isSelected: ko.observable(true),
                 selectedCount: ko.observable(0)
             });
         }
