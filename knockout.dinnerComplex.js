@@ -9,12 +9,12 @@ var LunchComplex = function(){
                 title: jsonData[i].title,
                 price: ko.observable(jsonData[i].price),
                 image: jsonData[i].image,
-                isSelected: ko.observable(false),
+                isSelected: ko.observable(true),
                 selectedCount: ko.observable(0)
             });
         }
         return result;
-    })()
+    })();
 
     self.totalPrice = ko.computed(function() {
         var resultPrice = 0;
@@ -25,8 +25,8 @@ var LunchComplex = function(){
         }
         return resultPrice;
     });
-    self.fillSelectElement = function(){
-        return 0;
+    self.fillSelectElement = function(data){
+        $(data).addClass('selectItem');
     };
 };
 
