@@ -3,29 +3,25 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="site.css" type="text/css"/>
-    <script src="./libs/jquery-1.11.1.js"></script>
-    <script src="./libs/knockout-3.1.0.js"></script>
-    <script src="./jsonDatabase.js"></script>
-    <script src="./knockout.dinnerComplex.js"></script>
-    <script src="./knockout.popupCustomBindings.js"></script>
-    <script src="./knockout.selectedCustomBinding.js"></script>
-    <script src ="./libs/jquery-ui-1.10.4.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui-1.10.4.css">
+    <link rel="stylesheet" href="css/site.css" type="text/css"/>
 </head>
 <body>
 
 <table>
     <thead>
-        <td>Цена выбранного комплекса: </td>
-        <td><span data-bind="text:totalPrice"></span></td>
-        <td></td>
-        <td><button id="popupOnButton" data-bind="dialogCommand: {id: 'dialog'}" >Ok</button></td>
+    <td>Цена выбранного комплекса:</td>
+    <td><span data-bind="text:totalPrice"></span></td>
+    <td></td>
+    <td>
+        <button id="popupOnButton" data-bind="dialogCommand: {id: 'dialog'}">Ok</button>
+    </td>
     </thead>
     <tbody data-bind="foreach: foods">
-    <tr data-bind="fillItem: selectedCount">
+
+    <tr data-bind="css: { selectItem: selectedCount() > 0} ">
         <td data-bind="text: title"></td>
-        <td ><img width="150px" height="150px" data-bind="attr:{src: image}"></td>
+        <td><img width="150px" height="150px" data-bind="attr:{src: image}"></td>
         <td data-bind="text: price"></td>
         <td><input type="number" data-bind="value: selectedCount" min="0" max="50"></td>
     </tr>
@@ -33,7 +29,16 @@
 </table>
 
 <br/>
-<div id="dialog" data-bind="dialog: {autoOpen: false, title: 'Комплексный обед' }, dialogVisible: isOpen">расчитано</div>
+
+<div id="dialog" data-bind="dialog: {autoOpen: false, title: 'Комплексный обед' }, dialogVisible: isOpen">расчитано
+</div>
 
 </body>
+<script src="./libs/jquery-1.11.1.js"></script>
+<script src="./libs/jquery-ui-1.10.4.js"></script>
+<script src="./libs/knockout-3.1.0.js"></script>
+<script src="js/model.js"></script>
+<script src="js/knockout.dinnerComplex.js"></script>
+<script src="js/knockout.popupCustomBindings.js"></script>
+<script src="js/knockout.selectedCustomBinding.js"></script>
 </html>

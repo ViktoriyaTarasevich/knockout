@@ -24,16 +24,23 @@ thead tr:first-child {
     border: none;
 }
 
-th {font-weight: bold;}
-td{
-    text-align: center;
-    border:  1px solid #428bca;;
+th {
+    font-weight: bold;
 }
 
-tbody tr:hover {opacity: 0.7;}
-tbody td {border-bottom: 1px solid #ddd;}
+td {
+    text-align: center;
+    border: 1px solid #428bca;;
+}
 
+tbody tr:hover {
+    opacity: 0.7;
+}
 
-.selectItem{
+tbody td {
+    border-bottom: 1px solid #ddd;
+}
+
+.selectItem {
     background-color: #ADD8E6;
 }
